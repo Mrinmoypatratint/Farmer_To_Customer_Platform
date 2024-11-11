@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmFresh eCommerce</title>
+    <!-- Font and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="farmer.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h1>FarmFresh</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#orders">Orders</a></li>
+                <li><a href="#bargains">Bargains</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="overlay"></div>
+        <div class="home-content">
+            <h2>Welcome to FarmFresh</h2>
+            <p>Bringing the freshest produce directly from the farm to your doorstep.</p>
+            <button id="add-product-btn">Add New Product</button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>My Products</h2>
+        <div id="product-list" class="product-container">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Orders Section -->
+    <section id="orders">
+        <h2>Incoming Orders</h2>
+        <div id="order-list" class="order-container">
+            <!-- Orders will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Bargains Section -->
+    <section id="bargains">
+        <h2>Retailer Bargains</h2>
+        <div id="bargain-list" class="bargain-container">
+            <!-- Bargain offers will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback">
+        <h2>Customer Feedback</h2>
+        <div id="feedback-list" class="feedback-container">
+            <!-- Feedback will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Add Product Modal -->
+    <div id="add-product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Add New Product</h3>
+            <form id="add-product-form">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" required>
+
+                <label for="product-price">Price per Unit (₹):</label>
+                <input type="number" id="product-price" min="0" step="0.01" required>
+
+                <label for="product-stock">Stock Quantity:</label>
+                <input type="number" id="product-stock" min="0" required>
+
+                <label for="product-quality">Quality:</label>
+                <div>
+                    <input type="radio" id="quality-best" name="product-quality" value="best">
+                    <label for="quality-best">Best</label>
+                </div>
+                <div>
+                    <input type="radio" id="quality-good" name="product-quality" value="good" checked>
+                    <label for="quality-good">Good</label>
+                </div>
+                <div>
+                    <input type="radio" id="quality-bad" name="product-quality" value="bad">
+                    <label for="quality-bad">Bad</label>
+                </div>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bargain Modal -->
+    <div id="bargain-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Bargain Offer</h3>
+            <p id="bargain-details"></p>
+            <div class="bargain-inputs">
+                <label for="bargain-price">Counter Offer Price (₹):</label>
+                <input type="number" id="bargain-price" min="0" step="0.01">
+            </div>
+            <div class="bargain-buttons">
+                <button id="accept-bargain-btn">Accept Offer</button>
+                <button id="counter-bargain-btn">Counter Offer</button>
+                <button id="deny-bargain-btn">Deny Offer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="farmer.js"></script>
+</body>
+
+</html>

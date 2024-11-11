@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="stylereg.css">
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Registration</h2>
+        <form id="registrationForm">
+            <label for="userType">I am a:</label>
+            <select id="userType" name="userType" onchange="showFields()">
+                <option value="consumer">Consumer</option>
+                <option value="retailer">Retailer</option>
+                <option value="farmer">Farmer</option>
+            </select>
+
+            <div id="commonFields">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label>Gender:</label>
+                <label for="male">Male</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="gender" value="female">
+            </div>
+            <div id="retailerFields" class="hidden">
+                <label for="storeName">Store Name:</label>
+                <input type="text" id="storeName" name="storeName">
+
+                <label for="businessLicense">Business License Number:</label>
+                <input type="text" id="businessLicense" name="businessLicense">
+            </div>
+
+            <div id="farmerFields" class="hidden">
+                <label for="farmName">Farm Name:</label>
+                <input type="text" id="farmName" name="farmName">
+
+                <label for="farmLocation">Farm Location:</label>
+                <input type="text" id="farmLocation" name="farmLocation">
+            </div>
+
+            <button type="submit" id="submitSignUp">Sign Up</button>
+        </form>
+        <p>
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCA2iX7UFmms-SA84wdXMVuU6InEiQ-jb0",
+            authDomain: "authentication-96d41.firebaseapp.com",
+            projectId: "authentication-96d41",
+            storageBucket: "authentication-96d41.appspot.com",
+            messagingSenderId: "1071415909905",
+            appId: "1:1071415909905:web:1072cd27c68dfb98f55bb0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                alert('User created successfully!');
+                // Redirect to login page or other page after successful registration
+                window.location.href = 'login.html';
+            } catch (error) {
+                alert(`Error: ${error.message}`);
+            }
+        });
+
+        function showFields() {
+            // Show or hide fields based on user type
+        }
+    </script>
+     </script>
+
+     <SCRipt SRC="scriptreg.js"></SCRipt>
+</body>
+</html>

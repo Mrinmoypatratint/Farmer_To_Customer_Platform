@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retailer Vegetable Market</title>
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="stylesss.css">
+
+    <!-- Link to External JavaScript -->
+    <script defer src="retailer.js"></script>
+
+    <!-- Additional Metadata -->
+    <meta name="description" content="A modern eCommerce platform for retailers to purchase vegetables.">
+    <meta name="keywords" content="eCommerce, Retailer, Vegetables, Online Shopping">
+    <meta name="author" content="Your Name">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Font and Icons (Optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="header-content">
+                <h1><i class="fas fa-carrot"></i> Vegetable Market</h1>
+                <div class="search-bar">
+                    <input type="text" id="searchBar" placeholder="Search for vegetables...">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="container">
+            <section id="productList">
+                <h2>Available Vegetables</h2>
+                <div class="products">
+                    <!-- Tomato -->
+                    <article class="product-item">
+                        <figure>
+                            <img src="tomatoes.jpeg" alt="Tomatoes">
+                        </figure>
+                        <div class="product-info">
+                            <h3>Tomatoes</h3>
+                            <p>Price: ₹50 per kg</p>
+                            <p>Availability: In Stock</p>
+                            <p>Max Quantity: 20 kg</p>
+                            <p>Quality: Best</p>
+                            <input type="number" min="1" max="20" placeholder="Quantity">
+                            <div class="product-actions">
+                                <button class="btn buy-now">Buy Now</button>
+                                <button class="btn negotiate">Negotiate</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Potato -->
+                    <article class="product-item">
+                        <figure>
+                            <img src="potato.jpeg" alt="Potato">
+                        </figure>
+                        <div class="product-info">
+                            <h3>Potato</h3>
+                            <p>Price: ₹30 per kg</p>
+                            <p>Availability: In Stock</p>
+                            <p>Max Quantity: 20 kg</p>
+                            <p>Quality: Good</p>
+                            <input type="number" min="1" max="20" placeholder="Quantity">
+                            <div class="product-actions">
+                                <button class="btn buy-now">Buy Now</button>
+                                <button class="btn negotiate">Negotiate</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Ginger -->
+                    <article class="product-item">
+                        <figure>
+                            <img src="ginger.jpg" alt="Ginger">
+                        </figure>
+                        <div class="product-info">
+                            <h3>Ginger</h3>
+                            <p>Price: ₹120 per kg</p>
+                            <p>Availability: Out of Stock</p>
+                            <p>Max Quantity: 20 kg</p>
+                            <p>Quality: Best</p>
+                            <input type="number" min="1" max="20" placeholder="Quantity" disabled>
+                            <div class="product-actions">
+                                <button class="btn buy-now" disabled>Buy Now</button>
+                                <button class="btn negotiate" disabled>Negotiate</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Carrot -->
+                    <article class="product-item">
+                        <figure>
+                            <img src="carrot.jpeg" alt="Carrot">
+                        </figure>
+                        <div class="product-info">
+                            <h3>Carrot</h3>
+                            <p>Price: ₹40 per kg</p>
+                            <p>Availability: In Stock</p>
+                            <p>Max Quantity: 20 kg</p>
+                            <p>Quality: Good</p>
+                            <input type="number" min="1" max="20" placeholder="Quantity">
+                            <div class="product-actions">
+                                <button class="btn buy-now">Buy Now</button>
+                                <button class="btn negotiate">Negotiate</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Onion -->
+                    <article class="product-item">
+                        <figure>
+                            <img src="onion.jpg" alt="Onion">
+                        </figure>
+                        <div class="product-info">
+                            <h3>Onion</h3>
+                            <p>Price: ₹45 per kg</p>
+                            <p>Availability: In Stock</p>
+                            <p>Max Quantity: 20 kg</p>
+                            <p>Quality: Best</p>
+                            <input type="number" min="1" max="20" placeholder="Quantity">
+                            <div class="product-actions">
+                                <button class="btn buy-now">Buy Now</button>
+                                <button class="btn negotiate">Negotiate</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Cabbage -->
+                    <article class="product-item">
+                        <figure>
+                            <img src="cabbage.jpeg" alt="Cabbage">
+                        </figure>
+                        <div class="product-info">
+                            <h3>Cabbage</h3>
+                            <p>Price: ₹25 per kg</p>
+                            <p>Availability: In Stock</p>
+                            <p>Max Quantity: 20 kg</p>
+                            <p>Quality: Good</p>
+                            <input type="number" min="1" max="20" placeholder="Quantity">
+                            <div class="product-actions">
+                                <button class="btn buy-now">Buy Now</button>
+                                <button class="btn negotiate">Negotiate</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Spinach -->
+                    <article class="product-item">
+                        <figure>
+                            <img src="spinach.jpeg" alt="Spinach">
+                        </figure>
+                        <div class="product-info">
+                            <h3>Spinach</h3>
+                            <p>Price: ₹20 per bunch</p>
+                            <p>Availability: Out of Stock</p>
+                            <p>Max Quantity: 20 bunches</p>
+                            <p>Quality: Bad</p>
+                            <input type="number" min="1" max="20" placeholder="Quantity" disabled>
+                            <div class="product-actions">
+                                <button class="btn buy-now" disabled>Buy Now</button>
+                                <button class="btn negotiate" disabled>Negotiate</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modals Section -->
+    <div id="modals">
+
+        <!-- Order Status Modal -->
+         
+        <div id="orderModal" class="modal hidden">
+            <div class="modal-dialog">
+                <header class="modal-header">
+                    <h2>Order Status</h2>
+                    <button class="close">&times;</button>
+                </header>
+                <div class="modal-body">
+                    <p id="status">Your order is being processed...</p>
+                </div>
+                <footer class="modal-footer">
+                    <button id="okButton" class="btn">OK</button>
+                </footer>
+            </div>
+        </div>
+        
+
+        <!-- Negotiate Modal -->
+        <div id="negotiateModal" class="modal">
+            <div class="modal-dialog">
+                <header class="modal-header">
+                    <h2>Negotiate Price</h2>
+                    <button class="close">&times;</button>
+                </header>
+                <div class="modal-body">
+                    <p id="negotiateInfo">Current Price: ₹50 per kg</p>
+                    <input type="number" id="counterOffer" placeholder="Enter your counteroffer price">
+                </div>
+                <div class="product-item" data-price="100" data-availability="Available" data-quantity="50" data-quality="Best">
+                    <h3>Product Name</h3>
+                    <p class="price">₹100</p>
+                    <p class="availability">Available</p>
+                    <p class="quantity">50</p>
+                    <p class="quality">Best</p>
+                </div>
+                
+                <footer class="modal-footer">
+                    <button id="submitCounterOffer" class="btn">Submit Offer</button>
+                </footer>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vegetable Market. All rights reserved.</p>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

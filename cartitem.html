@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">E-Shop</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="product.html">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="login.html" id="login">login</a></li>
+        </ul>
+
+        <div class="cart-icon">
+            <a href="cartitem.html"><img src="D:\Shopping Cart Silhouette Transparent Background, Shopping Cart Icon, Cart Icons, Shopping Icons, Shopping Cart PNG Image For Free Download_files\pngtree-shopping-cart-icon-image_1144330.jpg"></a>
+        </div>
+    </nav>
+    <header>
+        <h1>Your Shopping Cart</h1>
+    </header>
+
+    <main>
+        <div class="cart-container">
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Cart items will be populated here by JavaScript -->
+                </tbody>
+            </table>
+            <div class="total">
+                <p id="total-price">Total: $0.00</p>
+                <button onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your E-commerce Site</p>
+    </footer>
+
+    <script src="cartitem.js"></script>
+</body>
+</html>

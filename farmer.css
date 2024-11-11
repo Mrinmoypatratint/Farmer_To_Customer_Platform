@@ -1,0 +1,285 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    font-weight: bold;
+}
+
+/* Home Section */
+#home {
+    position: relative;
+    height: 100vh;
+    background-image: url("thumb-1920-1284104.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+#home .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+}
+
+#home h2 {
+    font-size: 3rem;
+    margin: 0;
+    animation: float 3s infinite;
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#home button {
+    background-color: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+#home button:hover {
+    background-color: #e0a800;
+}
+
+/* Keyframes for Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
+
+/* Section Styles */
+section {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #28a745;
+}
+
+/* Product, Orders, Bargain, and Feedback Containers */
+.product-container, .order-container, .bargain-container, .feedback-container, .incoming-offers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Product Item Styles */
+.product-item, .incoming-offer-item, .bargain-item, .order-item, .feedback-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+}
+
+.product-item:hover, .incoming-offer-item:hover, .bargain-item:hover, .order-item:hover, .feedback-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item h3, .incoming-offer-item h3, .bargain-item h3, .order-item h3, .feedback-item h3 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+}
+
+.product-item p, .incoming-offer-item p, .bargain-item p, .order-item p, .feedback-item p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.status.available {
+    color: green;
+}
+
+.status.out-of-stock {
+    color: red;
+}
+
+.status.best {
+    color: #28a745;
+}
+
+.status.good {
+    color: #ffc107;
+}
+
+.status.bad {
+    color: #dc3545;
+}
+
+/* Button Styles */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s;
+}
+
+.close-btn {
+    color: #333;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Fade in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form input[type="radio"] {
+    margin-right: 10px;
+}
+
+form button {
+    align-self: flex-end;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Flexbox Layout for Product Form Radio Buttons */
+form div {
+    display: flex;
+    align-items: center;
+}
+
+form div label {
+    margin-right: 20px;
+}
+
+@media (min-width: 768px) {
+    .product-item, .incoming-offer-item, .bargain-item, .order-item, .feedback-item {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-item, .incoming-offer-item, .bargain-item, .order-item, .feedback-item {
+        width: calc(25% - 20px);
+    }
+}

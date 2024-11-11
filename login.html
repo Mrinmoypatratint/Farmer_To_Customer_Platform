@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <div class="login-selection">
+            <button id="consumerBtn" class="login-btn" onclick="setUserType('consumer')">Consumer</button>
+            <button id="retailerBtn" class="login-btn" onclick="setUserType('retailer')">Retailer</button>
+            <button id="farmerBtn" class="login-btn" onclick="setUserType('farmer')">Farmer</button>
+        </div>
+
+        <form id="loginForm" class="login-form">
+            <input type="text" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="hidden" id="userType" name="userType" value="consumer">
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <p>
+            Create a new account
+            <a href="registration.html">click</a>
+        </p>
+    </div>
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCA2iX7UFmms-SA84wdXMVuU6InEiQ-jb0",
+            authDomain: "authentication-96d41.firebaseapp.com",
+            projectId: "authentication-96d41",
+            storageBucket: "authentication-96d41.appspot.com",
+            messagingSenderId: "1071415909905",
+            appId: "1:1071415909905:web:1072cd27c68dfb98f55bb0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+    
+    if (loginForm) {
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const userType = document.getElementById('userType').value;
+
+
+// Store user type in localStorage (or use sessionStorage, cookie, etc.)
+localStorage.setItem('userType', userType);
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                alert('Login successful!');
+                
+                // Redirect based on user type
+                switch (userType) {
+                    case 'farmer':
+                        window.location.href = 'farmer.html';
+                        break;
+                    case 'consumer':
+                        window.location.href = 'farmer.html';
+                        break;
+                    
+                    case 'retailer':
+                        window.location.href = 'retailer.html'; // or another page specific to retailer
+                        break;
+                    default:
+                        alert('Unknown user type!');
+                        break;
+                
+                }
+            } catch (error) {
+                alert(`Error: ${error.message}`);
+            }
+        
+        });
+    }
+
+        function setUserType(type) {
+            document.getElementById('userType').value = type;
+        }
+    })
+
+
+    </script>
+    <script src="logins.js"></script>
+</body>
+
+</html>
+    

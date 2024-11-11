@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="stylehome.css">
+   
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">E-Shop</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="product.html">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="login.html" id="login">login</a></li>
+    
+        </ul>
+
+        <div class="cart-icon">
+            <a href="cartitem.html"><img src="D:\Shopping Cart Silhouette Transparent Background, Shopping Cart Icon, Cart Icons, Shopping Icons, Shopping Cart PNG Image For Free Download_files\pngtree-shopping-cart-icon-image_1144330.jpg"></a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to E-Shop</h1>
+            <p>Your one-stop shop for all your needs.</p>
+            <a href="product.html" class="btn">Shop Now</a>
+        </div>
+    </section>
+    <!-- search bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for products...">
+        <button onclick="searchProducts()">Search</button>
+    </div>
+    <div id="results"></div>
+
+    <!-- <script src="script.js"></script> -->
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="https://www.kribhco.net/assets/img/product/bharat_npk_1.jpg" alt="Product 1">
+                <h3>NPK (10:26:26)</h3>
+                <p>$29.99</p>
+            </div>
+            <div class="product">
+                <img src="https://www.kribhco.net/assets/img/product/bharat_npk_2.jpg" alt="Product 2">
+                <h3>NPK (12:32:16)</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="product">
+                <img src="https://nutritionsource.hsph.harvard.edu/wp-content/uploads/2014/01/potatoes-411975_1280-768x512.jpg" alt="Product 3">
+                <h3>Potato</h3>
+                <p>Rs.30.99/kg</p>
+            </div>
+            <div class="product">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQM29n_AOaMuiSX_vPY6rOxFRn59PA_EmNaymEissDKrq4cIlD72-G1kPz4RzAGIV3BgTX6MXIgwIDiYdoYt_ZLqU_Hg4UzfTnGGKTo7rsv&usqp=CAE" alt="Product 4">
+                <h3>Pma Basmati Paddy, Basmati Rice Seed-1109 For Farming & Agricalture, Basmati Seed</h3>
+                <p>$39.99</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 E-Shop. All Rights Reserved.</p>
+    </footer>
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+    import { getDatabase } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCA2iX7UFmms-SA84wdXMVuU6InEiQ-jb0",
+      authDomain: "authentication-96d41.firebaseapp.com",
+      projectId: "authentication-96d41",
+      storageBucket: "authentication-96d41.appspot.com",
+      messagingSenderId: "1071415909905",
+      appId: "1:1071415909905:web:1072cd27c68dfb98f55bb0"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    submitSignUp.addEventListener('click',(e) => {
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var male = document.getElementById('male').value;
+        var female = document.getElementById('female').value;
+        var storeName = document.getElementById('storeName').value;
+        var businessLicense = document.getElementById('businessLicense').value;
+        var farmName = document.getElementById('farmName').value;
+        var farmLocation = document.getElementById('farmLocation').value;
+        
+
+        createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    alert('user created!');
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    alert('errorMessage!');
+    // ..
+  });
+    
+    });
+    
+  </script>
+</html>
